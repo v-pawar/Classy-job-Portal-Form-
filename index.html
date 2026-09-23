@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classy Job Application Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 🎥 Background Video -->
+    <video class="bg-video" autoplay muted loop playsinline>
+      <source src="img/moon video.mp4" type="video/mp4" />
+    </video>
+
+    <div class="container">
+      <div>
+        <h2>Classy Job Application</h2>
+      </div>
+
+      <form class="job-form" action="success.html">
+        <div>
+          <label>Name *</label>
+          <input type="text" placeholder="First Name" required />
+
+          <label>Email *</label>
+          <input type="email" placeholder="vivek@gmail.com" required />
+
+          <label>Phone *</label>
+          <input type="tel" placeholder="Phone" required />
+
+          <label>Country *</label>
+          <select required>
+            <option value="" disabled selected>Select Country</option>
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+            <option value="canada">Canada</option>
+            <option value="australia">Australia</option>
+            <option value="germany">Germany</option>
+          </select>
+
+          <div>
+            <h4>What Position Are You Applying For? *</h4>
+            <select required>
+              <option value="" disabled selected>Select Position</option>
+              <option value="frontend">Frontend Developer</option>
+              <option value="backend">Backend Developer</option>
+              <option value="fullstack">Full Stack Developer</option>
+              <option value="designer">UI/UX Designer</option>
+              <option value="devops">DevOps Engineer</option>
+              <option value="mobile">Mobile Developer</option>
+            </select>
+          </div>
+
+          <div>
+            <h3>What Is Your Current Employment Status? *</h3>
+            <div class="radio-group">
+              <label>
+                <input
+                  type="radio"
+                  name="employment"
+                  value="employed"
+                  required
+                />
+                Employed
+              </label>
+              <label>
+                <input type="radio" name="employment" value="unemployed" />
+                Unemployed
+              </label>
+              <label>
+                <input type="radio" name="employment" value="student" />
+                Student
+              </label>
+              <label>
+                <input type="radio" name="employment" value="self-employed" />
+                Self Employment
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <h3>Upload Your Resume</h3>
+            <input type="file" accept=".pdf,.doc,.docx,.txt" />
+          </div>
+        </div>
+
+        <div>
+          <button type="submit">Send Application</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

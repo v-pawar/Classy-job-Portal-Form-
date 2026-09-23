@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application Submitted — Success</title>
+    <link rel="stylesheet" href="success.css" />
+    <style>
+      /* ============================================
+   PREMIUM SUCCESS PAGE — success.css
+   ============================================ */
+
+      /* ----- RESET & BASE ----- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+        background-color: #0a0a0a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        padding: 20px;
+      }
+
+      /* ----- 🎥 BACKGROUND VIDEO ----- */
+      .bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+      }
+
+      /* ----- 🌑 DARK OVERLAY ----- */
+      .video-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle at center,
+          rgba(0, 0, 0, 0.55),
+          rgba(0, 0, 0, 0.85)
+        );
+        z-index: -1;
+      }
+
+      /* ----- ✨ SUCCESS CARD ----- */
+      .success-container {
+        width: 100%;
+        max-width: 480px;
+
+        padding: 50px 40px;
+
+        background-color: rgba(20, 20, 20, 0.92);
+        color: white;
+
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 22px;
+
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+
+        text-align: center;
+
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+
+        animation: cardFadeUp 0.8s ease both;
+      }
+
+      @keyframes cardFadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ----- ✅ ANIMATED CHECKMARK ----- */
+      .checkmark-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 28px;
+      }
+
+      .checkmark {
+        width: 90px;
+        height: 90px;
+        stroke-width: 3;
+        stroke-miterlimit: 10;
+      }
+
+      .checkmark-circle {
+        stroke: #4f8cff;
+        stroke-width: 3;
+        stroke-dasharray: 166;
+        stroke-dashoffset: 166;
+        animation: strokeCircle 0.7s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+        filter: drop-shadow(0 0 12px rgba(79, 140, 255, 0.7));
+      }
+
+      .checkmark-check {
+        stroke: #4f8cff;
+        stroke-width: 4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 48;
+        stroke-dashoffset: 48;
+        animation: strokeCheck 0.5s cubic-bezier(0.65, 0, 0.45, 1) 0.6s forwards;
+        filter: drop-shadow(0 0 10px rgba(79, 140, 255, 0.8));
+      }
+
+      @keyframes strokeCircle {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes strokeCheck {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      /* ----- HEADING ----- */
+      .success-container h1 {
+        font-size: 28px;
+        font-weight: 600;
+        letter-spacing: 0.6px;
+        margin-bottom: 12px;
+
+        background: linear-gradient(135deg, #ffffff, #b0c7ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* ----- PARAGRAPH ----- */
+      .success-container p {
+        font-size: 15px;
+        color: #c7c7c7;
+        line-height: 1.6;
+        margin-bottom: 8px;
+      }
+
+      .success-container .sub-text {
+        font-size: 14px;
+        color: #9a9a9a;
+        margin-top: 18px;
+        margin-bottom: 30px;
+      }
+
+      .success-container .sub-text strong {
+        color: #4f8cff;
+        font-weight: 600;
+      }
+
+      /* ----- DIVIDER ----- */
+      .divider {
+        width: 60px;
+        height: 3px;
+        margin: 22px auto;
+        background: linear-gradient(90deg, transparent, #4f8cff, transparent);
+        border-radius: 10px;
+        opacity: 0.7;
+      }
+
+      /* ----- BACK BUTTON ----- */
+      .back-btn {
+        display: inline-block;
+
+        padding: 14px 34px;
+
+        background: linear-gradient(135deg, #4f8cff, #3568d4);
+        color: white;
+
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+
+        border-radius: 10px;
+
+        transition:
+          transform 0.18s,
+          box-shadow 0.25s,
+          background 0.25s;
+        box-shadow: 0 6px 18px rgba(79, 140, 255, 0.35);
+      }
+
+      .back-btn:hover {
+        background: linear-gradient(135deg, #5f97ff, #2e5bbd);
+        box-shadow: 0 10px 25px rgba(79, 140, 255, 0.5);
+        transform: translateY(-2px);
+      }
+
+      .back-btn:active {
+        transform: scale(0.97);
+      }
+
+      /* ----- RESPONSIVE ----- */
+      @media (max-width: 520px) {
+        .success-container {
+          padding: 40px 24px;
+          border-radius: 18px;
+        }
+
+        .checkmark {
+          width: 72px;
+          height: 72px;
+        }
+
+        .success-container h1 {
+          font-size: 22px;
+        }
+
+        .success-container p {
+          font-size: 14px;
+        }
+
+        .back-btn {
+          padding: 12px 26px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 🎥 Background Video -->
+    <video class="bg-video" autoplay muted loop playsinline>
+      <source src="video/04_job.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- 🌑 Dark Overlay -->
+    <div class="video-overlay"></div>
+
+    <!-- ✨ Success Card -->
+    <div class="success-container">
+      <!-- Animated Checkmark -->
+      <div class="checkmark-wrapper">
+        <svg class="checkmark" viewBox="0 0 52 52">
+          <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+          <path class="checkmark-check" fill="none" d="M14 27 l8 8 l16 -16" />
+        </svg>
+      </div>
+
+      <h1>Registration Successful!</h1>
+      <p>Your job application has been submitted successfully.</p>
+
+      <div class="divider"></div>
+
+      <p class="sub-text">
+        Thank you for applying. Our team will review your application and get
+        back to you within <strong>3–5 business days</strong>.
+      </p>
+
+      <a href="index.html" class="back-btn">← Back to Home</a>
+    </div>
+  </body>
+</html>
