@@ -12,24 +12,33 @@
       <source src="img/moon video.mp4" type="video/mp4" />
     </video>
 
+    <div class="popup" id="successPopup">
+      <div class="popup-box">
+        <h2>✓</h2>
+        <h3>Application Submitted!</h3>
+        <p>Your application was submitted successfully.</p>
+        <button id="closePopup" type="button">OK</button>
+      </div>
+    </div>
+
     <div class="container">
       <div>
         <h2>Classy Job Application</h2>
       </div>
 
-      <form class="job-form" action="success.html">
+      <form class="job-form" id="jobform">
         <div>
           <label>Name *</label>
-          <input type="text" placeholder="First Name" required />
+          <input type="text" placeholder="First Name" id="name" />
 
           <label>Email *</label>
-          <input type="email" placeholder="vivek@gmail.com" required />
+          <input type="email" placeholder="vivek@gmail.com" id="email" />
 
           <label>Phone *</label>
-          <input type="tel" placeholder="Phone" required />
+          <input type="tel" placeholder="Phone" id="phone" maxlength="10" />
 
           <label>Country *</label>
-          <select required>
+          <select id="country">
             <option value="" disabled selected>Select Country</option>
             <option value="india">India</option>
             <option value="usa">USA</option>
@@ -41,7 +50,7 @@
 
           <div>
             <h4>What Position Are You Applying For? *</h4>
-            <select required>
+            <select id="position">
               <option value="" disabled selected>Select Position</option>
               <option value="frontend">Frontend Developer</option>
               <option value="backend">Backend Developer</option>
@@ -54,14 +63,9 @@
 
           <div>
             <h3>What Is Your Current Employment Status? *</h3>
-            <div class="radio-group">
+            <div class="radio-group" id="employment">
               <label>
-                <input
-                  type="radio"
-                  name="employment"
-                  value="employed"
-                  required
-                />
+                <input type="radio" name="employment" value="employed" />
                 Employed
               </label>
               <label>
@@ -81,7 +85,7 @@
 
           <div>
             <h3>Upload Your Resume</h3>
-            <input type="file" accept=".pdf,.doc,.docx,.txt" />
+            <input type="file" accept=".pdf,.doc,.docx,.txt" id="resume" />
           </div>
         </div>
 
@@ -90,5 +94,25 @@
         </div>
       </form>
     </div>
+
+    <!-- ====================================== -->
+    <!-- APPLICATIONS DASHBOARD -->
+    <!-- ====================================== -->
+    <section class="applications-dashboard">
+      <h2>Applications Dashboard</h2>
+
+      <p id="applicationCount"></p>
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by name or email..."
+      />
+
+      <button id="deleteAllBtn">Delete All Applications</button>
+
+      <div id="applicationsList"></div>
+    </section>
+    <script src="script.js"></script>
   </body>
 </html>
